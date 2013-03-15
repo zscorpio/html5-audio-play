@@ -1,0 +1,15 @@
+!!! 5
+html
+  head
+    title Express
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/socket.io/socket.io.js')
+    script
+      var socket = io.connect('http://42.121.129.32:8888');
+      socket.on('news', function (data) {
+      console.log(data);
+      socket.emit('my other event', { my: 'data' });
+      });
+  body
+    h1 Express
+    p Welcome to Express
